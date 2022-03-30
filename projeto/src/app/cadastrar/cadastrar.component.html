@@ -1,67 +1,46 @@
-<div class="container-fluid">
+<div class="container-fluid bg">
+    <div class="row d-flex align-items-center">
 
-    <div class='row'>
+        <div class="col-md-6" id="img-bg"></div>
 
-        <div class='col-md-6' id='img-bg'> </div>
-
-
-
-        <div class='col-md-6 mt-5 mb-5'>
-
+        <div class="col-md-6">
             <div class="row d-flex justify-content-center">
-                <div class='col-md-10'>
+                <div class="col-md-8">
+                    <h1 class="text-center mb-3 animate-charcter">Cadastre-se</h1>
 
-                    <h1 class='text-center'> Cadastro</h1>
-                    <div class="form-group">
-                        <label for="Nome"> Nome</label>
-                        <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome"
-                            placeholder="Seu nome">
-                    </div>
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Nome*">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="email" placeholder="E-mail*">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="Senha*">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="Confirmar senha*">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="Foto*">
+                        </div>
+                        <div>
+                            <label class="text-light" for="">Selecione o tipo de usuário:</label>
+                            <select class="form-control" name="selecionar" id="selecionar">
+                                <option value="">Administrador</option>
+                                <option value="">Normal</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="usuario"> Usuario</label>
-                        <input [(ngModel)]='user.usuario' class="form-control" type="text" name="Usuario"
-                            id="Usuario" placeholder="Seu usuario">
-                    </div>
+                        <div class="d-flex justify-content-center mt-4">
+                            <a routerLink="/entrar"><button type="submit" class="btn mr-5 btn-danger botao">Cancelar</button></a>
+                            
+                            <button type="submit" class="btn btn-success botao">Confirmar</button>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="Foto"> Link da foto</label>
-                        <input [(ngModel)="user.foto" class="form-control" type="foto" name="foto" id="foto"
-                            placeholder="Link da sua foto">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="Senha"> Senha</label>
-                        <input (input)='confirmSenha' class="form-control" type="password" name="senha" id="Senha"
-                            placeholder="Sua senha">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="confirmSenha"> ConfirmarSenha</label>
-                        <input [(ngModel)="user.senha" class="form-control" type="password" name="senha" id="Senha"
-                            placeholder="Confirme sua senha">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="Tipo"> Tipo de usuaario</label>
-                        <select class='form-control' name="tipo" id="tipo" (change)='tipoUser($event)'>
-                            <option>Selecione um tipo de usuario:</option>
-                            <option value="normal"> Normal</option>
-                            <option value="adm"> Administrador</option>
-                        </select>
-
-                    </div>
-                    <div class='d-flex justify-content-center'>
-                        <button type='submit' class='btn btn-danger mr-4' routerLink='/entrar'> Cancelar </button>
-                        <button type='submit' class='btn btn-success' (click)="cadastrar">Cadastrar</button>
-                    </div>
-
-
+                    </form>
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
